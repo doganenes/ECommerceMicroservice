@@ -20,7 +20,7 @@ namespace Multishop.Discount.Context
         {
             optionsBuilder.UseSqlServer(_connectionString);
         }
-        public DbSet<Coupon> Coupons { get; set; }
+        public DbSet<DiscountCoupon> Coupons { get; set; }
 
         public IDbConnection CreateConnection()
         {
