@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Multishop.Order.Application.Features.CQRS.Results.AddressResults
+namespace Multishop.Order.Application.Features.CQRS.Commands.AddressCommands
 {
-    public class GetAddressQueryResult
+    public class UpdateAddressCommand
     {
         public int AddressID { get; set; }
         public string UserID { get; set; }

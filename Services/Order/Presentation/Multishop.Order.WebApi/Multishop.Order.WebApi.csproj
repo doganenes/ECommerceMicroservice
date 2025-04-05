@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Core\Multishop.Order.Application\Multishop.Order.Application.csproj" />
+    <ProjectReference Include="..\..\Core\Multishop.Order.Domain\Multishop.Order.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Multishop.Order.Persistence\Multishop.Order.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
