@@ -2,6 +2,7 @@ using Multishop.Order.Application.Features.CQRS.Handlers.AddressHandlers;
 using Multishop.Order.Application.Features.CQRS.Handlers.OrderDetailHandlers;
 using Multishop.Order.Application.Interfaces;
 using Multishop.Order.Application.Services;
+using Multishop.Order.Persistence.Context;
 using Multishop.Order.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,7 @@ builder.Services.AddScoped<CreateOrderDetailCommandHandler>();
 builder.Services.AddScoped<UpdateOrderDetailCommandHandler>();
 builder.Services.AddScoped<RemoveOrderDetailCommandHandler>();
 #endregion
+builder.Services.AddDbContext<OrderContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -28,11 +30,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
+    app.UseSwagger(); 
     app.UseSwaggerUI();
 }
 
