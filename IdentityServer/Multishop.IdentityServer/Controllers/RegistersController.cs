@@ -20,7 +20,7 @@ namespace Multishop.IdentityServer.Controllers
 
         [HttpPost]
         public async Task<IActionResult> UserRegister(UserRegisterDto dto)
-        {
+        { 
             var values = new ApplicationUser()
             {
                 UserName = dto.Username,
