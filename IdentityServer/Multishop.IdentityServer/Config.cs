@@ -20,9 +20,6 @@ namespace Multishop.IdentityServer
 
         public static IEnumerable<IdentityResource> IdentityResources => new IdentityResource[]
         {
-          new IdentityResources.OpenId(),
-          new IdentityResources.Email(),
-          new IdentityResources.Profile(),
         };
 
         public static IEnumerable<ApiScope> ApiScopes => new ApiScope[]
@@ -47,7 +44,7 @@ namespace Multishop.IdentityServer
                 },
                 AllowedScopes = {"CatalogReadPermission"}
             },
-            
+
             new Client
             {
                 ClientId = "MultishopManagerId",
@@ -57,12 +54,7 @@ namespace Multishop.IdentityServer
                 {
                     new Secret("multishopsecret".Sha256())
                 },
-                AllowedScopes = {"CatalogReadPermission","CatalogFullPermission",
-                IdentityServerConstants.LocalApi.ScopeName,
-                IdentityServerConstants.StandardScopes.Email,
-                IdentityServerConstants.StandardScopes.OpenId,
-                IdentityServerConstants.StandardScopes.Profile
-                }
+                AllowedScopes = {"CatalogReadPermission","CatalogFullPermission"}
             },
             new Client
             {
@@ -73,6 +65,7 @@ namespace Multishop.IdentityServer
                 {
                     new Secret("multishopsecret".Sha256())
                 },
+             
                 AllowedScopes = {"CatalogFullPermission", "CatalogReadPermission", "DiscountFullPermission", "OrderFullPermission" ,
                 IdentityServerConstants.LocalApi.ScopeName,
                 IdentityServerConstants.StandardScopes.Email,
@@ -81,8 +74,6 @@ namespace Multishop.IdentityServer
                 },
                 AccessTokenLifetime=600
             },
-
-
         };
     }
 }
