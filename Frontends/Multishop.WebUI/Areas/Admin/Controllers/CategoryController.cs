@@ -36,9 +36,9 @@ namespace Multishop.WebUI.Areas.Admin.Controllers
 
             return View();
         }
+
         [HttpGet]
         [Route("CreateCategory")]
-
         public async Task<IActionResult> CreateCategory()
         {
             ViewBag.v0 = "Homepage";
