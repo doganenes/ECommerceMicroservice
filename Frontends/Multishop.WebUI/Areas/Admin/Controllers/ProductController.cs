@@ -18,6 +18,7 @@ namespace Multishop.WebUI.Areas.Admin.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
+
         [Route("Index")]
         public async Task<IActionResult> Index()
         {
@@ -140,5 +141,26 @@ namespace Multishop.WebUI.Areas.Admin.Controllers
             }
             return View();
         }
+
+        [Route("ProductListWithCategory")]
+        public async Task<IActionResult> ProductListWithCategory()
+        {
+            ViewBag.v0 = "Homepage";
+            ViewBag.v1 = "Products";
+            ViewBag.v2 = "Product List";
+            ViewBag.v3 = "Product Operations";
+
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7070/api/Products/GetProductsWithCategory");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultProductWithCategoryDto>>(jsonData);
+                return View(values);
+            }
+
+            return View();
+        }
+
     }
 }
