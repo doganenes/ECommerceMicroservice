@@ -1,7 +1,10 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Multishop.Catalog.Dtos.FeatureSliderDtos
+namespace Multishop.DtoLayer.CatalogDtos.FeatureSliderDtos
 {
     public class CreateFeatureSliderDto
     {
