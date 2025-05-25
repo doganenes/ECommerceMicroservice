@@ -56,7 +56,7 @@
 | Cargo     | ASP.NET Core API   | SQL Server   | Shipping & tracking               |
 | Message   | ASP.NET Core API   | PostgreSQL   | Messaging between users           |
 | Comment   | ASP.NET Core API   | SQL Server   | Product reviews                   |
-| Images    | ASP.NET Core API   | Google Cloud Services          | File/image uploads                |
+| Images    | ASP.NET Core API   | Google Cloud Storage          | File/image uploads                |
 | Identity  | IdentityServer    | SQL Server   | User login, registration, roles   |
 
 ---
