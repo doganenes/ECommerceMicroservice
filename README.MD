@@ -5,11 +5,7 @@
 ---
 
 ## 📦 Architecture Overview
-
-> ⚠️ **Note**: Replace the image path below with your actual architecture diagram.
-
-![Architecture]
-
+![test](https://github.com/user-attachments/assets/acad5058-efd3-48ee-8e27-ec107b06a252)
 ---
 
 ## ⚙ Technologies Used
