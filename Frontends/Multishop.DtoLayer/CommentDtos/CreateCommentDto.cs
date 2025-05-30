@@ -1,8 +1,13 @@
-﻿namespace Multishop.Comment.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Multishop.DtoLayer.CommentDtos
 {
-    public class UserComment
+    public class CreateCommentDto
     {
-        public int UserCommentId { get; set; }
         public string NameSurname { get; set; }
         public string? ImageUrl { get; set; }
         public string Email { get; set; }
@@ -10,6 +15,6 @@
         public int Rating { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool Status { get; set; }
-        public int ProductId { get; set; } 
+        public int ProductId { get; set; }
     }
 }
