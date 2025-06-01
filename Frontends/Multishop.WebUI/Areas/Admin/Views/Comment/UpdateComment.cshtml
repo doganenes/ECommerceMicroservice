@@ -1,8 +1,41 @@
-﻿
+﻿@model UpdateCommentDto
 @{
     ViewData["Title"] = "UpdateComment";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<h1>UpdateComment</h1>
-
+<section class="content container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Update Comment</h4>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <form method="post">
+                        <input type="hidden" asp-for="UserCommentId">                      
+                        <input type="hidden" asp-for="ProductId">
+                        <br />
+                        <label>User Name Surname</label>
+                        <input type="text" asp-for="NameSurname" class="form-control" placeholder="Name Surname" required>
+                        <br />
+                        <label>User Image</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" placeholder="Image Url" required>
+                        <br />
+                        <label>User Email</label>
+                        <input type="text" asp-for="Email" class="form-control" placeholder="Email" required>
+                        <br />
+                        <label>User Rating</label>
+                        <input type="text" asp-for="Rating" class="form-control" placeholder="Rating" required>
+                        <br />
+                        <label>User Comment</label>
+                        <input type="text" asp-for="CommentDetail" class="form-control" placeholder="Comment" required>
+                        <br />
+                        <label>User Comment Date</label>
+                        <input type="date" asp-for="CreatedDate" class="form-control" placeholder="Comment Name" required>
+                        <br />
+                        <button class="btn btn-primary">Update Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

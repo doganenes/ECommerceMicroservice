@@ -68,5 +68,12 @@ namespace Multishop.Comment.Controllers
             }
             return Ok(comment);
         }
+
+        [HttpGet("CommentListByProductId")]
+        public IActionResult CommentListByProductId(string id)
+        {
+            var values = _commentContext.UserComments.Where(x => x.ProductId == id).ToList();
+            return Ok(values);
+        }
     }
 }

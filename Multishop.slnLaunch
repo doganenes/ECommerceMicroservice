@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "IdentityServer\\Multishop.IdentityServer\\Multishop.IdentityServer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Catalog\\Multishop.Catalog\\Multishop.Catalog.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Frontends\\Multishop.WebUI\\Multishop.WebUI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Comment\\Multishop.Comment\\Multishop.Comment.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
