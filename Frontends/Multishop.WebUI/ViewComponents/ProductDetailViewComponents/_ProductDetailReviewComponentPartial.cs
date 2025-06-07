@@ -13,7 +13,7 @@ namespace Multishop.WebUI.ViewComponents.ProductDetailViewComponents
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> Invoke(string id)
+        public async Task<IViewComponentResult> InvokeAsync(string id)
         {
             ViewBag.v0 = "Homepage";
             ViewBag.v1 = "Comments";
@@ -31,5 +31,6 @@ namespace Multishop.WebUI.ViewComponents.ProductDetailViewComponents
 
             return View();
         }
+
     }
 }

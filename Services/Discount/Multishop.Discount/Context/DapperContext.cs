@@ -13,7 +13,6 @@ namespace Multishop.Discount.Context
         {
             _configuration = configuration;
             _connectionString = _configuration.GetConnectionString("DefaultConnection");
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
