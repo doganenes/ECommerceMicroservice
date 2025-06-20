@@ -1,97 +1,111 @@
 # 🛍 ECommerceMicroservice
 
-**ECommerceMicroservice** is a containerized, distributed e-commerce application built with a microservice architecture using modern technologies like .NET Core, RabbitMQ, Redis, Docker, and IdentityServer4. It represents a real-world, scalable, and modular system designed with separation of concerns and best practices.
+**ECommerceMicroservice**, .NET Core, RabbitMQ, Redis, Docker ve IdentityServer4 gibi modern teknolojilerle geliştirilen, konteyner tabanlı dağıtık bir e-ticaret uygulamasıdır. Gerçek dünya senaryolarına uygun, ölçeklenebilir ve modüler bir yapı sunar. Sorunların ayrıştırılması (separation of concerns) ve en iyi yazılım geliştirme pratikleri dikkate alınarak hazırlanmıştır.
 
 ---
 
-## 📦 Architecture Overview
-![test](https://github.com/user-attachments/assets/acad5058-efd3-48ee-8e27-ec107b06a252)
+## 📦 Mimari Genel Bakış
+
+![Architecture Overview](https://github.com/user-attachments/assets/acad5058-efd3-48ee-8e27-ec107b06a252)
+
 ---
 
-## ⚙ Technologies Used
+## ⚙ Kullanılan Teknolojiler
 
-### 🧱 Backend & Microservices
-- **.NET Core 8.0** – Microservice development
+### 🧱 Backend & Mikroservisler
+- **.NET 8.0** – Mikroservis geliştirme
 - **ASP.NET Core MVC** – Web UI (MultiShop.WebUI)
-- **Entity Framework Core** – ORM for relational databases
-- **Dapper** – Lightweight ORM for fast data access
-- **AutoMapper** – Object-Object mapping (DTO ↔ Entity)
-- **Ocelot** – API Gateway for routing and aggregation
+- **Entity Framework Core** – ORM (ilişkisel veritabanı için)
+- **Dapper** – Hafif ve hızlı veri erişimi
+- **AutoMapper** – DTO ↔ Entity dönüşümleri
+- **Ocelot** – API Gateway (routing ve aggregation)
 
-### 🔐 Authentication & Authorization
-- **IdentityServer4** – OAuth2 / OpenID Connect provider
-- **JWT (JSON Web Token)** – Secure token-based authentication
+### 🔐 Kimlik Doğrulama & Yetkilendirme
+- **IdentityServer4** – OAuth2 / OpenID Connect sağlayıcısı
+- **JWT (JSON Web Token)** – Token tabanlı kimlik doğrulama
 
-### 🧵 Communication & Real-Time
-- **RabbitMQ** – Asynchronous messaging between services
-- **SignalR** – Real-time messaging and communication
+### 🧵 İletişim & Gerçek Zamanlı Veri
+- **RabbitMQ** – Asenkron servisler arası mesajlaşma
+- **SignalR** – Gerçek zamanlı iletişim altyapısı
 
-### 🧠 Caching & Performance
-- **Redis** – Distributed caching (e.g., for Basket service)
+### 🧠 Önbellekleme & Performans
+- **Redis** – Dağıtık önbellekleme sistemi
 
-### 🗄 Databases
-- **SQL Server** – Relational database for most services
-- **MongoDB** – NoSQL for the Catalog service
-- **PostgreSQL** – Used in the Message microservice
+### 🗄 Veritabanları
+- **SQL Server** – İlişkisel veritabanı
+- **MongoDB** – NoSQL (Catalog servisi için)
+- **PostgreSQL** – Message servisi için
 
-### ☁ Storage
-- **Google Cloud Storage** – File/image upload service
+### ☁ Dosya Depolama
+- **Google Cloud Storage** – Görsel/dosya yükleme servisi
 
-### 🐳 Containerization & DevOps
-- **Docker & Docker Compose** – Containerized service orchestration
-- **Portainer** – Docker container management UI
+### 🐳 Konteyner & DevOps
+- **Docker & Docker Compose** – Konteyner yönetimi
+- **Portainer** – Docker arayüz yönetim aracı
 
-### 🧪 Development Tools
-- **Postman** – API testing
----
-
-## 🧩 Microservices Breakdown
-
-| Service   | Technology         | Database     | Features                          |
-|-----------|--------------------|--------------|-----------------------------------|
-| Catalog   | ASP.NET Core API   | MongoDB      | Product listing                   |
-| Basket    | ASP.NET Core API   | Redis        | Shopping cart with caching        |
-| Discount  | ASP.NET Core API   | SQL Server   | Discount code management          |
-| Order     | ASP.NET Core API   | SQL Server   | Order placement and tracking      |
-| Cargo     | ASP.NET Core API   | SQL Server   | Shipping & tracking               |
-| Message   | ASP.NET Core API   | PostgreSQL   | Messaging between users           |
-| Comment   | ASP.NET Core API   | SQL Server   | Product reviews                   |
-| Images    | ASP.NET Core API   | Google Cloud Storage          | File/image uploads                |
-| Identity  | IdentityServer    | SQL Server   | User login, registration, roles   |
+### 🧪 Geliştirme Araçları
+- **Postman** – API testleri için
 
 ---
 
-## 🐳 Dockerized Services
+## 🧩 Mikroservisler Özeti
 
-This project uses **Docker Compose** to orchestrate the following services:
+| Servis    | Teknoloji           | Veritabanı            | Açıklama                        |
+|-----------|---------------------|------------------------|---------------------------------|
+| Catalog   | ASP.NET Core API    | MongoDB                | Ürün listeleme                  |
+| Basket    | ASP.NET Core API    | Redis                  | Alışveriş sepeti                |
+| Discount  | ASP.NET Core API    | SQL Server             | İndirim kodu yönetimi          |
+| Order     | ASP.NET Core API    | SQL Server             | Sipariş işleme                  |
+| Cargo     | ASP.NET Core API    | SQL Server             | Kargo & takip                   |
+| Message   | ASP.NET Core API    | PostgreSQL             | Mesajlaşma sistemi              |
+| Comment   | ASP.NET Core API    | SQL Server             | Ürün yorumları                  |
+| Images    | ASP.NET Core API    | Google Cloud Storage   | Görsel/dosya yükleme servisi    |
+| Identity  | IdentityServer4     | SQL Server             | Giriş, kayıt, rol yönetimi      |
 
-- All microservices
+---
+
+## 🐳 Docker Compose ile Çalışan Servisler
+
+Proje, aşağıdaki servisleri bir arada çalıştırmak için `docker-compose.yml` kullanır:
+
+- Tüm mikroservisler
 - IdentityServer4
 - API Gateway (Ocelot)
 - Redis
-- RabbitMQ (with management UI)
+- RabbitMQ (UI arayüzü dahil)
 - SQL Server
 - MongoDB
 - PostgreSQL
 - Portainer
 
-Check the `docker-compose.yml` file for the full configuration.
+Detaylı konfigürasyon için `docker-compose.yml` dosyasını inceleyin.
 
 ---
 
-## Getting Started
+## 🚀 Başlarken
 
-### Prerequisites
+### Gereksinimler
 
 - [.NET SDK](https://dotnet.microsoft.com/en-us/download)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
-- (Optional) [Postman](https://www.postman.com/) – for testing APIs
+- (Opsiyonel) [Postman](https://www.postman.com/)
 
-### Run the System
+### Sistemi Başlatmak için
 
 ```bash
 git clone https://github.com/your-username/ECommerceMicroservice.git
 cd ECommerceMicroservice
 
 docker-compose up --build
+
+---
+
+## 📸 Screenshots
+![Image1](https://github.com/user-attachments/assets/cf75a300-a221-4746-afb9-99338bec1b4e)
+![Image](https://github.com/user-attachments/assets/197d13d9-1166-42e0-b26f-22862dbb40db)
+![Image](https://github.com/user-attachments/assets/c65a66ad-f720-4f4d-b6d6-a0461c4036a9)
+![Image](https://github.com/user-attachments/assets/a0d0a2bb-a843-424a-a5f3-1d93df0ed790)
+![Image](https://github.com/user-attachments/assets/d08ce291-db8b-4b81-b1f1-44c2717724c0)
+![Image](https://github.com/user-attachments/assets/4f242297-a504-4cf3-9f84-c77d1814c592)
+![Image](https://github.com/user-attachments/assets/07672fea-7fee-4622-bebe-cf7c7ef9ea13)
