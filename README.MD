@@ -82,6 +82,19 @@ Detaylı konfigürasyon için `docker-compose.yml` dosyasını inceleyin.
 
 ---
 
+
+
+## 📸 Screenshots
+![Image1](https://github.com/user-attachments/assets/cf75a300-a221-4746-afb9-99338bec1b4e)
+![Image](https://github.com/user-attachments/assets/197d13d9-1166-42e0-b26f-22862dbb40db)
+![Image](https://github.com/user-attachments/assets/c65a66ad-f720-4f4d-b6d6-a0461c4036a9)
+![Image](https://github.com/user-attachments/assets/a0d0a2bb-a843-424a-a5f3-1d93df0ed790)
+![Image](https://github.com/user-attachments/assets/d08ce291-db8b-4b81-b1f1-44c2717724c0)
+![Image](https://github.com/user-attachments/assets/4f242297-a504-4cf3-9f84-c77d1814c592)
+![Image](https://github.com/user-attachments/assets/07672fea-7fee-4622-bebe-cf7c7ef9ea13)
+
+---
+
 ## 🚀 Başlarken
 
 ### Gereksinimler
@@ -98,14 +111,4 @@ git clone https://github.com/your-username/ECommerceMicroservice.git
 cd ECommerceMicroservice
 
 docker-compose up --build
-
 ---
-
-## 📸 Screenshots
-![Image1](https://github.com/user-attachments/assets/cf75a300-a221-4746-afb9-99338bec1b4e)
-![Image](https://github.com/user-attachments/assets/197d13d9-1166-42e0-b26f-22862dbb40db)
-![Image](https://github.com/user-attachments/assets/c65a66ad-f720-4f4d-b6d6-a0461c4036a9)
-![Image](https://github.com/user-attachments/assets/a0d0a2bb-a843-424a-a5f3-1d93df0ed790)
-![Image](https://github.com/user-attachments/assets/d08ce291-db8b-4b81-b1f1-44c2717724c0)
-![Image](https://github.com/user-attachments/assets/4f242297-a504-4cf3-9f84-c77d1814c592)
-![Image](https://github.com/user-attachments/assets/07672fea-7fee-4622-bebe-cf7c7ef9ea13)
